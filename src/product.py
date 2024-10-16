@@ -10,11 +10,11 @@ class Product:
     def __init__(self, name: Any, description: Any, price: Any, quantity: Any) -> None:
         self.name = name  # название
         self.description = description  # описание
-        self.__price = price  # цена
+        self.__price = price
         self.quantity = quantity  # количество товара в наличии
 
     @classmethod
-    def new_product(cls, information: Any) -> Any:
+    def new_product(cls, information: dict) -> Any:
         """
         Возвращает информацию на основе ссылки на класс
         """
@@ -26,19 +26,21 @@ class Product:
         )
 
     @property
-    def check_price(self) -> Any:
+    def price_1(self) -> Any:
         """
         Возвращает приватизированную цену
         """
         return self.__price
 
-    @check_price.setter
-    def check_price(self, price: float) -> Any:
+    @price_1.setter
+    def price_1(self, price: float) -> None:
         """
-        Сравнивает приватизированную цену с условием
+        Сравнивает приватизированную цену с условием и присваивает новое значение
         """
-        if price <= 0:
-            return "Цена не должна быть нулевая или отрицательная"
+        if price > 0:
+            self.__price = price
+        else:
+            raise ValueError("Цена не должна быть нулевая или отрицательная")
 
 
 product_1 = Product("помидор", "помидор cherry", 15.0, 100)

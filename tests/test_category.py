@@ -1,12 +1,18 @@
 import pytest
 
 from src.category import Category
-from src.product import product_1, product_2
+from src.product import product_1
 
 
 @pytest.fixture
 def category_1() -> Category:
     return Category("Продукты", "Овощи")
+
+
+def test_private_products_access() -> None:
+    category = Category("Продукты", "Овощи")
+    with pytest.raises(AttributeError):
+        _ = category.__products
 
 
 def test_category_info(category_1: Category) -> None:
