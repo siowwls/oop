@@ -23,7 +23,7 @@ class Product:
     @classmethod
     def new_product(cls, information: dict) -> Any:
         """
-        Возвращает информацию на основе ссылки на класс
+        Возвращает информацию на основе ссылки на класс.
         """
         return cls(
             information["name"],
@@ -35,14 +35,14 @@ class Product:
     @property
     def price_1(self) -> Any:
         """
-        Возвращает приватизированную цену
+        Возвращает приватизированную цену.
         """
         return self.__price
 
     @price_1.setter
     def price_1(self, price: float) -> None:
         """
-        Сравнивает приватизированную цену с условием и присваивает новое значение
+        Сравнивает приватизированную цену с условием и присваивает новое значение.
         """
         if price > 0:
             self.__price = price

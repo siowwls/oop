@@ -21,7 +21,7 @@ class Category:
 
     def add_product(self, private_product: Product) -> None:
         """
-        Функция добавляет продукты в приватный список
+        Функция добавляет продукты в приватный список.
         """
         self.__products.append(private_product)
         Category.count_products += 1
@@ -36,7 +36,7 @@ class Category:
     @property
     def get_inf_products(self) -> str:
         """
-        Информация о товаре
+        Информация о товаре.
         """
         inf_products = []
         for product in self.__products:
