@@ -29,7 +29,7 @@ class Category:
     @property
     def products_1(self) -> list:
         """
-        Возвращает список продуктов
+        Возвращает список продуктов.
         """
         return self.__products
 
